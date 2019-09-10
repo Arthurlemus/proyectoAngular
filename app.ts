@@ -1,14 +1,3 @@
-// let nombre:string;
-// let edad:number;
-// let Booleano:boolean;
-// let hoy:Date = new Date();
-
-// let cualquiera:any;
-
-// let spiderman = {
-//     nombre:"Peter",
-//     edad: 20
-// };
 
 
 
@@ -26,8 +15,27 @@
 // console.log(texto);
 
 // function activar(nombre:string,objeto:string="espada",poder?:string){
-//     // contenido de funcion
-// }
+    //     // contenido de funcion
+    // }
+    
+ // ──────────────────────────────────────────────────────────────────────────
+ // Tipos de Datos 
+ // ──────────────────────────────────────────────────────────────────────────
+ // let nombre:string;
+ // let edad:number;
+ // let Booleano:boolean;
+ // let hoy:Date = new Date();
+ 
+ // let cualquiera:any;
+  
+ // let spiderman = {
+ //     nombre:"Peter",
+ //     edad: 20
+ // };
+ 
+// ──────────────────────────────────────────────────────────────────────────
+// Funciones de Flecha
+// ──────────────────────────────────────────────────────────────────────────
 
 // let mifuncion = function(a:number,b:number){
 //     return a + b;
@@ -46,6 +54,9 @@
 // console.log(mifuncionFlecha(30,10));
 // objeto.accion();
 
+// ──────────────────────────────────────────────────────────────────────────
+// Destructuracion de Objetos
+// ──────────────────────────────────────────────────────────────────────────
 
 // let avenger = {
 //     nombre: "Steve",
@@ -61,19 +72,36 @@
 
 // console.log(nreal , clave,poder);r
 
-let prom1 = new Promise(function(resolve,reject){
-    setTimeout(()=>{
-        console.log("Promesa Terminada");
-        resolve();
-    },1500);
+// ──────────────────────────────────────────────────────────────────────────
+// Promesas
+// ──────────────────────────────────────────────────────────────────────────
+// let prom1 = new Promise(function(resolve,reject){
+//     setTimeout(()=>{
+//         console.log("Promesa Terminada");
+//         resolve();
+//     },1500);
+    
+// });
 
-});
 
+// prom1.then(function(){
+//     console.log("Todo Sale Bien");
+// },
+// function(){
+//     console.error("Algo Salio mal");
+// });
 
-prom1.then(function(){
-    console.log("Todo Sale Bien");
-},
-function(){
-    console.error("Algo Salio mal");
-});
+// ──────────────────────────────────────────────────────────────────────────
+// Interfaces Typescript
+// ──────────────────────────────────────────────────────────────────────────
+function enviarMision(xmen:any){
+    console.log("Enviando a: " + xmen.nombreXmen);
+}
 
+let wolverine = {
+    nombreXmen:"Wolverine",
+    nombreReal:"Logan",
+    poder:"Regeneracion"
+}
+
+enviarMision(wolverine);
