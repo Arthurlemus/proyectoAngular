@@ -1,6 +1,12 @@
 // nombre = "irving";
 // console.log(hoy);
 // console.log(nombre);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 // let nombre:string = "irving";
 // let apellido:string = "Lemus";
 // let edad:number = 32;
@@ -69,12 +75,56 @@
 // ──────────────────────────────────────────────────────────────────────────
 // Interfaces Typescript
 // ──────────────────────────────────────────────────────────────────────────
-function enviarMision(xmen) {
-    console.log("Enviando a: " + xmen.nombreXmen);
+// interface Xmen{
+//     nombreXmen:string,
+//     nombreReal:string,
+//     poder:string
+// }
+// function enviarMision(xmen:Xmen){
+//     console.log("Enviando a: " + xmen.nombreXmen);
+// }
+// function enviarCuartel(xmen:Xmen){
+//     console.log("Enviando al Cuartel: " + xmen.nombreXmen);
+// }
+// let wolverine:Xmen = {
+//     nombreXmen:"Wolverine",
+//     nombreReal:"Logan",
+//     poder:"Regeneracion"
+// }
+// enviarMision(wolverine);
+// enviarCuartel(wolverine);
+// ──────────────────────────────────────────────────────────────────────────
+// Clases Typescript
+// ──────────────────────────────────────────────────────────────────────────
+// class Avanger {
+//     nombre:string;
+//     equipo:string;
+//     nombreReal:string;
+//     puedePelear:boolean;
+//     peleasGanadas:number;
+//     constructor(nombre:string,equipo:string,nombreReal:string){
+//         this.nombre = nombre;
+//         this.equipo = equipo;
+//         this.nombreReal = nombreReal;
+//     }
+// }
+// let antman:Avanger = new Avanger("ArthurLemu","Iroman","Irving Lemus");
+// console.log(antman);
+// ──────────────────────────────────────────────────────────────────────────
+// Decoradores de Clases
+// ──────────────────────────────────────────────────────────────────────────
+function consola(constructor) {
+    console.log(constructor);
 }
-var wolverine = {
-    nombreXmen: "Wolverine",
-    nombreReal: "Logan",
-    poder: "Regeneracion"
-};
-enviarMision(wolverine);
+var Villano = /** @class */ (function () {
+    function Villano(nombre) {
+        this.nombre = nombre;
+        //
+    }
+    Villano = __decorate([
+        consola
+    ], Villano);
+    return Villano;
+}());
+var prueba = new Villano("pro");
+console.log(prueba);

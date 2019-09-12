@@ -94,14 +94,66 @@
 // ──────────────────────────────────────────────────────────────────────────
 // Interfaces Typescript
 // ──────────────────────────────────────────────────────────────────────────
-function enviarMision(xmen:any){
-    console.log("Enviando a: " + xmen.nombreXmen);
+// interface Xmen{
+//     nombreXmen:string,
+//     nombreReal:string,
+//     poder:string
+// }
+
+
+// function enviarMision(xmen:Xmen){
+//     console.log("Enviando a: " + xmen.nombreXmen);
+// }
+
+// function enviarCuartel(xmen:Xmen){
+//     console.log("Enviando al Cuartel: " + xmen.nombreXmen);
+// }
+
+// let wolverine:Xmen = {
+//     nombreXmen:"Wolverine",
+//     nombreReal:"Logan",
+//     poder:"Regeneracion"
+// }
+
+// enviarMision(wolverine);
+// enviarCuartel(wolverine);
+
+// ──────────────────────────────────────────────────────────────────────────
+// Clases Typescript
+// ──────────────────────────────────────────────────────────────────────────
+// class Avanger {
+//     nombre:string;
+//     equipo:string;
+//     nombreReal:string;
+    
+//     puedePelear:boolean;
+//     peleasGanadas:number;
+    
+//     constructor(nombre:string,equipo:string,nombreReal:string){
+//         this.nombre = nombre;
+//         this.equipo = equipo;
+//         this.nombreReal = nombreReal;
+//     }
+// }
+
+// let antman:Avanger = new Avanger("ArthurLemu","Iroman","Irving Lemus");
+
+// console.log(antman);
+
+// ──────────────────────────────────────────────────────────────────────────
+// Decoradores de Clases
+// ──────────────────────────────────────────────────────────────────────────
+function consola(constructor:Function){
+    console.log(constructor);
 }
 
-let wolverine = {
-    nombreXmen:"Wolverine",
-    nombreReal:"Logan",
-    poder:"Regeneracion"
+
+@consola
+class Villano{
+    constructor(public nombre:string){
+        //
+    }
 }
 
-enviarMision(wolverine);
+let prueba = new Villano("pro");
+console.log(prueba);
