@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   Nombre = 'Irving';
   Appaterno = 'Lemus';
-  title ='Proyect Angular';
+  title = 'Proyect Angular';
 }
