@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { isNumber } from 'util';
 
 export interface Heroe { // Para delimitar el arreglo
    nombre: string;
@@ -6,6 +7,7 @@ export interface Heroe { // Para delimitar el arreglo
    img: string;
    aparicion: string;
    casa: string;
+   idx?: number;
 }
 
 @Injectable()
@@ -71,19 +73,27 @@ export class HeroesService {
     }
 
     getHeroe(idx: number) {
-      return this.heroes[idx];
+          return this.heroes[idx];
     }
 
     buscarHeroes(termino: string) {
       let heroesArr: Heroe[] = [];
 
       termino = termino.toLowerCase();
-      for (let heroe of this.heroes) {
+      for (let i = 0; i < this.heroes.length; i++) {
+        let heroe = this.heroes[i];
         let nombre = heroe.nombre.toLowerCase();
         if (nombre.indexOf(termino) >= 0) {
+          heroe.idx = i;
           heroesArr.push(heroe);
         }
       }
+      // for (let heroe of this.heroes) {
+      //   let nombre = heroe.nombre.toLowerCase();
+      //   if (nombre.indexOf(termino) >= 0) {
+      //     heroesArr.push(heroe);
+      //   }
+      // }
       return heroesArr;
     }
 }

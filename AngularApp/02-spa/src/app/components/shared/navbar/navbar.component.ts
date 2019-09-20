@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService, Heroe } from '../../../services/heroes.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -8,14 +10,18 @@ import { HeroesService, Heroe } from '../../../services/heroes.service';
 })
 export class NavbarComponent implements OnInit {
   heroes: Heroe[] = [];
-  constructor(private heroesService: HeroesService) { }
+  constructor(private heroesService: HeroesService, private router: Router) { }
   ngOnInit() {
   }
 
   buscarHeroe(termino: string) {
-    this.heroes = this.heroesService.buscarHeroes(termino);
-    console.log(this.heroes);
-    console.log(termino);
+    if (termino === '') {
+      this.router.navigate(['/heroes']);
+
+    } else {
+
+      this.router.navigate(['/filtro', termino]);
+    }
   }
 
 }
