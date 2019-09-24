@@ -9,8 +9,6 @@
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
-    "prefer-const":false,
-    "forin":false,
     "directive-selector": [
       true,
       "attribute",

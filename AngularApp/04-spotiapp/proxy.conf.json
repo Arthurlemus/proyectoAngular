@@ -1,0 +1,7 @@
+{
+    "/web/entregas/*": {
+        "target": "http://entregas.dyndns.org:85",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
