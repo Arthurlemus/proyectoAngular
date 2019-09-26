@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-// PAra llamadas
+// PAra llamadas http
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -19,6 +19,7 @@ import { ROUTES } from './app.routes';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { WidgetPipe } from './pipes/widget.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoadingComponent } from './shared/loading/loading.component';
     NavbarComponent,
     NoimagePipe,
     TarjetasComponent,
-    LoadingComponent
+    LoadingComponent,
+    WidgetPipe
   ],
   imports: [
     BrowserModule,
