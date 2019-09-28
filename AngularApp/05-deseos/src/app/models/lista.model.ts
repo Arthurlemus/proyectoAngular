@@ -8,5 +8,11 @@ export class Lista {
     terminada: boolean;
     item: ListaItem[];
 
-    constructor() {}
+    constructor(titulo: string) {
+        this.titulo = titulo;
+        this.creadaEn = new Date();
+        this.terminada = false;
+        this.item = [];
+        this.id = new Date().getTime();
+    }
 }
