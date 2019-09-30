@@ -27,7 +27,7 @@ export class Tab1Page {
         {
           text: 'Cancelar',
           role: 'cancel',
-          handler: () =>{
+          handler: () => {
             console.log('Cancelar');
           }
         },
@@ -35,9 +35,12 @@ export class Tab1Page {
           text: 'Crear',
           handler: (data) => {
             console.log(data);
-            if(data.titulo.length === 0){
+            if (data.titulo.length === 0) {
               return;
             }
+
+            const listaId = this.deseosService.crearLista(data.titulo);
+            this.router.navigate([`/tabs/tab1/agregar/${listaId}`]);
           }
         }
       ]
