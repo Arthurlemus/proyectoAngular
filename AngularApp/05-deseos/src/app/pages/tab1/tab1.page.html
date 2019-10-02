@@ -1,23 +1,23 @@
 <ion-header>
-    <ion-toolbar color="dark">
+    <ion-toolbar color="tertiary">
         <ion-title>
             Pendientes
         </ion-title>
+        <ion-badge slot="end" color="danger" (click)="deseosService.limpiarLista()" style="cursor: pointer">Limpiar Lista</ion-badge>
     </ion-toolbar>
+
 </ion-header>
 
 <ion-content color="dark">
-    <ion-list color="dark">
-        <ion-item *ngFor="let lista of deseosService.listas; let i = index" detail color="dark">
-            <ion-label>
-                {{lista.titulo}}
-            </ion-label>
-        </ion-item>
-    </ion-list>
+
+    <app-listas [terminada]="false"></app-listas>
+
+
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button color="tertiary" (click)="agregarLista()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
 </ion-content>

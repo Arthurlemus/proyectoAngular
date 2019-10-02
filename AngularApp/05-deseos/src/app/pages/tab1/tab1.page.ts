@@ -11,6 +11,7 @@ import { AlertController } from '@ionic/angular';
 export class Tab1Page {
 
   constructor(public deseosService: DeseosService, private router: Router, private alertCtrl: AlertController) {
+
   }
 
   async agregarLista() {
@@ -46,7 +47,7 @@ export class Tab1Page {
       ]
     });
     alert.present();
-    // this.router.navigate(['/tabs/tab1/agregar']);
   }
 
+ 
 }
