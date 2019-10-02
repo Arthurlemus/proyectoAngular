@@ -49,5 +49,4 @@ export class Tab1Page {
     alert.present();
   }
 
- 
 }
