@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { DeseosService } from '../../services/deseos.service';
 import { Router } from '@angular/router';
 import { Lista } from '../../models/lista.model';
-import { AlertController } from '@ionic/angular';
+import { AlertController, IonList } from '@ionic/angular';
 
 @Component({
   selector: 'app-listas',
@@ -11,7 +11,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class ListasComponent implements OnInit {
 @Input() terminada = true;
+@ViewChild(IonList, {static: false}) ionlista: IonList; // PAra Cerrar el boton de la izquieda
 
+// lista: Lista;
   constructor(public deseosService: DeseosService, private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {}
@@ -29,29 +31,35 @@ export class ListasComponent implements OnInit {
     this.deseosService.borrarLista(lista);
   }
 
-  async editarLista(lista: Lista[]) {
+  async editarLista(lista: Lista) {
       const alert = await this.alertController.create({
-        header: 'Cambiar Nombre',
+        header: 'Editar Lista',
         inputs: [
           {
             name: 'nuevonombre',
             type: 'text',
+            value: lista.titulo,
             placeholder: 'Nuevo Nombre'
           }
         ],
         buttons: [
           {
             text: 'Cancelar',
-            role: 'cancelar'
+            role: 'cancelar',
+            handler: () => {
+              this.ionlista.closeSlidingItems();
+            }
           },
           {
-            text: 'Cambiar',
+            text: 'Actualizar',
             handler: (dato) => {
-              console.log(dato.nuevonombre);
               if (dato.nuevonombre.lenght === 0) {
                 return;
               }
-
+              lista.titulo = dato.nuevonombre;
+              this.deseosService.guardarStorage();
+              this.ionlista.closeSlidingItems();
+              // this.deseosService.cargarStorage();
             }
           }
         ]
