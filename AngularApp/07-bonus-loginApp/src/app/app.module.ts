@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms'; // Para el Uso de los ngModel en Formularios
+import { HttpClientModule } from '@angular/common/http'; // PAra uso de Webservices
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +23,8 @@ import { LoginComponent } from './pages/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
