@@ -36,7 +36,7 @@ export class DataComponent implements OnInit {
     this.forma = new FormGroup({
       nombrecompleto: new FormGroup({
         nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        apellido: new FormControl('', Validators.required)
+        apellido: new FormControl('', [Validators.required, this.noPermitido])
       }),
       correo: new FormControl('', [
                                     Validators.required,
@@ -44,17 +44,32 @@ export class DataComponent implements OnInit {
                                 ]),
       pasatiempos: new FormArray([
         new FormControl('', Validators.required)
-        // new FormControl('Dormir', Validators.required),
-        // new FormControl('Correr', Validators.required)
-      ])
-
+      ]),
+      username: new FormControl('', Validators.required),
+      password1: new FormControl('', Validators.required),
+      password2: new FormControl()
     });
 
-    this.forma.setValue(this.usuario);
+    this.forma.get('password2').setValidators([Validators.required, this.noIgual.bind(this.forma)]);
+    // this.forma.setValue(this.usuario);
   }
 
   ngOnInit() {
   }
+
+  
+  noIgual(control: FormControl): any {
+    console.log(control);
+    if (control.value !== this.get('password1').value) {
+        return {noiguales: true };
+    }
+    return null;
+  }
+
+  existeUsuario(control: FormControl) {
+    // PAra verificar que el usuario existe
+  }
+
 
   guardarCambios() {
     console.log(this.forma.value);
@@ -62,6 +77,13 @@ export class DataComponent implements OnInit {
 
     // this.forma.reset();
     this.forma.reset(this.usuario);
+  }
+
+  noPermitido(control: FormControl) {
+    if (control.value === 'lemus') {
+      return {noPermitido: true};
+    }
+    return null;
   }
 
   agregarPasatiempo() {
