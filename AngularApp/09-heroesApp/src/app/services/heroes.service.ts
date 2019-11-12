@@ -31,6 +31,10 @@ export class HeroesService {
     return this.http.get(`${this.URL}/heroes.json`).pipe(map(resp => this.crearArreglo(resp)));
   }
 
+  getHeroe(id: string) {
+    return this.http.get(`${this.URL}/heroes/${id}.json`);
+  }
+
   private crearArreglo(heroesObj: object) {
     const heroes: HeroeModel[] = [];
     // console.log(heroesObj);
@@ -45,4 +49,6 @@ export class HeroesService {
 
     return heroes;
   }
+
+
 }
