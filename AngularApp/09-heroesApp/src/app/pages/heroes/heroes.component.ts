@@ -18,6 +18,10 @@ export class HeroesComponent implements OnInit {
       this.heroes = resp;
     });
   }
-
+  
+  borrarHeroe(heroe: HeroeModel, i: number) {
+    this.heroes.splice(i,1); // Para borrar los registros 
+    this.heroeService.borrarHeroe(heroe.id).subscribe();
+  }
 
 }
