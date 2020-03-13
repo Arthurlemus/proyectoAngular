@@ -13,11 +13,4 @@ const wolverine = {
 
 saludar(wolverine.nombre);
 
-const sumarN = (a: number, b: number)=>{
-    return a + b;
-}
-
-console.log('La suma es:',sumarN(5,10));
-
-
 })();
