@@ -1,14 +1,11 @@
 "use strict";
 (function () {
-    function saludar(nombre) {
-        console.table('Welcome ' + nombre); // Hola Logan
-    }
+    var enviarMision = function (xmen) {
+        console.log("Enviando a " + xmen.nombre + " a la Mision");
+    };
     var wolverine = {
-        nombre: 'Logan'
+        nombre: 'Logan',
+        edad: 30
     };
-    saludar(wolverine.nombre);
-    var sumarN = function (a, b) {
-        return a + b;
-    };
-    console.log('La suma es:', sumarN(5, 10));
+    enviarMision(wolverine);
 })();

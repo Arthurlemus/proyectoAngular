@@ -1,23 +1,16 @@
-(function(){
-
+(()=>{
     
-    function saludar(nombre: string) {
-    console.table('Welcome ' + nombre); // Hola Logan
-}
+    const enviarMision = (xmen:any) => {
+        console.log(`Enviando a ${xmen.nombre} a la Mision`);
+    }
 
+    const wolverine = {
+        nombre: 'Logan',
+        edad: 30
+    };
 
-const wolverine = {
-    nombre: 'Logan'
-};
-
-
-saludar(wolverine.nombre);
-
-const sumarN = (a: number, b: number)=>{
-    return a + b;
-}
-
-console.log('La suma es:',sumarN(5,10));
+    enviarMision(wolverine);
+    
 
 
 })();
