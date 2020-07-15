@@ -22,9 +22,10 @@ export class FiltroComponent implements OnInit {
       this.heroes = this.heroesService.buscarHeroes(parametro.heroe);
     });
   }
-
+/*
   verHeroe(id: number) {
     this.router.navigate(['/heroe', id]);
 }
+*/
 
 }

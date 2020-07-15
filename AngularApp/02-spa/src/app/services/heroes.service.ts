@@ -68,10 +68,13 @@ export class HeroesService {
 
   buscarHeroes(filtro: string) { // Genera un nuevo arreglo con los parametros de busqueda
    let heroesArr: Heroe[] = [];
-
-   for (let heroe of this.heroes) {
+    
+   // tslint:disable-next-line: prefer-for-of
+   for (let i = 0; i < this.heroes.length; i++) {
+      let heroe = this.heroes[i];
       let nombre = heroe.nombre.toLowerCase();
       if (nombre.indexOf(filtro) >= 0) {
+        heroe.id = i;
         heroesArr.push(heroe);
       }
    }
@@ -86,4 +89,5 @@ export interface Heroe {
   img: string;
   aparicion: string;
   casa: string;
+  id?: number;
 }

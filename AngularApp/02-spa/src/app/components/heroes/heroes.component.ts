@@ -16,6 +16,10 @@ export class HeroesComponent implements OnInit {
     this.heroes = this.heroesService.getHeroes();
   }
 
- 
+  /*
+   verHeroe(id: number) {
+     this.router.navigate(['/heroe', id]);
+   }
+   */
 
 }
