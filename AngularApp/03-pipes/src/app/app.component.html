@@ -66,7 +66,35 @@
                 <tr>
                     <td>{{moneda}}</td>
                     <td>Currency</td>
-                    <td>{{moneda |currency}}</td>
+                    <td>{{moneda |currency:'$'}}</td>
+                </tr>
+
+                <tr>
+                    <td>{{heroe}}</td>
+                    <td>JSON</td>
+                    <td><pre>{{heroe |json}}</pre></td>
+                </tr>
+
+                <tr>
+                    <td>{{valorPromesa}}</td>
+                    <td>Async</td>
+                    <td><pre>{{valorPromesa |async}}</pre></td>
+                </tr>
+
+                <tr>
+                    <td>{{fechaActual}}</td>
+                    <td>DATE</td>
+                    <td><pre>{{fechaActual |date}}</pre></td>
+                </tr>
+                <tr>
+                    <td>{{fechaActual}}</td>
+                    <td>DATE: 'medium'</td>
+                    <td><pre>{{fechaActual |date:'medium'}}</pre></td>
+                </tr>
+                <tr>
+                    <td>{{fechaActual}}</td>
+                    <td>DATE: 'MMMM - dd'</td>
+                    <td><pre>{{fechaActual |date:'MMMM - dd'}}</pre></td>
                 </tr>
             </tbody>
         </table>
