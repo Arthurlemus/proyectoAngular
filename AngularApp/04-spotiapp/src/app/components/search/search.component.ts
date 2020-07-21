@@ -13,4 +13,10 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  buscar(termino: string) {
+    if ( termino.length > 0) {
+      console.log(termino);
+    }
+  }
+
 }
