@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app.routes';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './components/shared/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     SearchComponent,
     ArtistaComponent,
     NavbarComponent,
-    NoimagePipe
+    NoimagePipe,
+    TarjetasComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
