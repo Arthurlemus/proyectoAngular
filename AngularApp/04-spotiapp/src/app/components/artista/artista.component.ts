@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artista',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ArtistaComponent implements OnInit {
-
-  constructor() { }
+  artistaID: any = '';
+  id: string = '';
+  constructor(private activateRoute: ActivatedRoute) {
+    activateRoute.params.subscribe(params => {
+      this.id = params.id;
+    });
+   }
 
   ngOnInit(): void {
   }

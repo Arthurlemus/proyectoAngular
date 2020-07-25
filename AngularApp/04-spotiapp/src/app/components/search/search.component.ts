@@ -16,11 +16,11 @@ export class SearchComponent implements OnInit {
   }
 
   buscar(termino: string) {
-    
+
     if ( termino.length > 0) {
        this.loading = true;
-       
-       this.spotify.getArtista(termino).subscribe((datos: any) => {
+
+       this.spotify.getArtistas(termino).subscribe((datos: any) => {
          this.artistas = datos;
          this.loading = false;
         });
