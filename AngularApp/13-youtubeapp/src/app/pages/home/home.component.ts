@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   getVideos() {
      this.youtubeService.getVideos().subscribe(resp => {
-       this.videos = resp;
+       this.videos.push(...resp);
        console.log(this.videos);
       });
   }

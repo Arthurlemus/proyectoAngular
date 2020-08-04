@@ -9,7 +9,7 @@ import { Item, YoutubeResponse } from '../models/youtube.models';
 })
 export class YoutubeService {
 
-  private key = 'AIzaSyCjM_MYzO5NHagCxsHmu4mVd47JNp9Y1SI';
+  private key = 'AIzaSyA7gycUQ74PVEqqmaO6KfKbeIAIYtIm9CA';
   private playListId = 'UUlOIdS-7kp0ugdfMYfWMpXQ';
   private part = 'snippet';
   private youtubeURL = 'https://www.googleapis.com/youtube/v3/';
@@ -22,7 +22,7 @@ export class YoutubeService {
           .set('key', this.key)
           .set('part', this.part)
           .set('playlistId', this.playListId)
-          .set('maxResults', '200');
+          .set('maxResults', '20');
 
   return this.http.get<T>(`${this.youtubeURL}${query}`, {params});
   }
