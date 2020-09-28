@@ -6,7 +6,7 @@ import { AgregarPageModule } from '../agregar/agregar.module';
 const routes: Routes = [
   {
     path: '',
-    component: Tab1Page,
+    component: Tab1Page
   },
   {
     path: 'agregar',
